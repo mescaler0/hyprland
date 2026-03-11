@@ -1,0 +1,23 @@
+/* Import wallust generated base palette */
+@import "~/.config/rofi/colors-base.rasi"
+
+* {
+    /* Map wallust variables to rofi variables */
+
+    background: @bg;
+    foreground: @fg;
+
+    normal-background: @background;
+    normal-foreground: @foreground;
+
+    lightbg: @color0;
+    lightfg: @color8;
+
+    selected-normal-background: @primary;
+    selected-normal-foreground: @bg;
+
+    blue: @primary;
+    red: @color3;
+
+    separatorcolor: @foreground;
+}

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Richiede sudo
+THEME_CONF="/usr/share/sddm/themes/sugar-candy/theme.conf"
+TEMP_CONF="$HOME/.cache/sddm-theme.conf"
+
+# Genera config da wallust
+if [ -f "$TEMP_CONF" ]; then
+    sudo cp "$TEMP_CONF" "$THEME_CONF"
+    echo "SDDM theme updated"
+fi

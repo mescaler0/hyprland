@@ -1,0 +1,32 @@
+* {
+    /* Base */
+    background:            {{background}};
+    foreground:            {{foreground}};
+
+    /* Normal */
+    normal-background:     {{background}};
+    normal-foreground:     {{foreground}};
+
+    /* Alternate */
+    lightbg:               {{color0}};
+    lightfg:               {{color8}};
+    alternate-normal-background: {{color0}};
+    alternate-normal-foreground: {{foreground}};
+
+    /* Selected */
+    selected-normal-background:  {{color4}};
+    selected-normal-foreground:  {{background}};
+
+    /* Active */
+    blue:                  {{color4}};
+    active-background:     {{background}};
+    active-foreground:     {{color4}};
+
+    /* Urgent */
+    red:                   {{color3}};
+    urgent-background:     {{background}};
+    urgent-foreground:     {{color3}};
+
+    /* Misc */
+    separatorcolor:        {{foreground}};
+}

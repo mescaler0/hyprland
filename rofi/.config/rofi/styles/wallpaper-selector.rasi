@@ -1,0 +1,86 @@
+@import "~/.config/rofi/colors.rasi"
+
+* {
+    background-color: transparent;
+    text-color: @fg;
+    font: "Cascadia Code 10";
+}
+
+window {
+    background-color: @bg;
+    border: 3px solid;
+    border-color: @primary;
+    border-radius: 12px;
+    width: 1000px;
+    padding: 20px;
+}
+
+mainbox {
+    spacing: 15px;
+}
+
+
+/* BARRA DI RICERCA */
+inputbar {
+    background-color: @color0;
+    border-radius: 8px;
+    padding: 12px 15px;
+    spacing: 10px;
+    children: [prompt, entry];
+}
+
+prompt {
+    text-color: @primary;
+    font: "Cascadia Code Bold 11";
+}
+
+entry {
+    placeholder: "Type to filter...";
+    placeholder-color: @color8;
+    text-color: @fg;
+}
+
+/* GRIGLIA WALLPAPERS */
+listview {
+    lines: 2;
+    columns: 4;
+    spacing: 15px;
+    scrollbar: true;
+    layout: vertical;
+}
+
+element {
+    orientation: vertical;
+    padding: 10px;
+    spacing: 10px;
+    background-color: @color0;
+    border-radius: 10px;
+}
+
+element selected {
+    background-color: @primary;
+    border: 3px solid;
+    border-color: @accent;
+}
+
+element-icon {
+    size: 150px;
+    border-radius: 8px;
+    horizontal-align: 0.5;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    font: "Cascadia Code 9";
+    text-color: @fg;
+}
+
+element selected element-text {
+    text-color: @bg;
+    font: "Cascadia Code Bold 9";
+}
+
+scrollbar {
+    handle-color: @primary;
+    background-color: @color0;
+}

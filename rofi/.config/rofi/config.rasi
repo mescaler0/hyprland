@@ -1,0 +1,94 @@
+@theme "/dev/null"
+@import "~/.config/rofi/colors.rasi"
+
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+    terminal: "kitty";
+    drun-display-format: "{name}";
+    font: "Fira Code 11";
+}
+
+window {
+    width: 22%;
+    location: center;
+    anchor: center;
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 14px;
+    border-color: @lightbg;
+    background-color: rgba(20, 23, 25, 90%);
+}
+
+mainbox {
+    spacing: 10px;
+    padding: 0px;
+    background-color: transparent;
+    children: [ "inputbar", "listview" ];
+}
+
+inputbar {
+    spacing: 0px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: @alternate-normal-background;
+    text-color: @foreground;
+    children: [ "entry" ];
+}
+
+entry {
+    background-color: transparent;
+    text-color: @foreground;
+    cursor: text;
+    placeholder: " Search…";
+    placeholder-color: @lightfg;
+}
+
+listview {
+    spacing: 4px;
+    scrollbar: false;
+    dynamic: true;
+    fixed-height: false;
+    background-color: transparent;
+}
+
+element {
+    padding: 6px 8px;
+    spacing: 8px;
+    border-radius: 6px;
+    background-color: transparent;
+    text-color: @foreground;
+    cursor: pointer;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @normal-foreground;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: @normal-foreground;
+}
+
+element selected.normal {
+    background-color: transparent;
+    text-color: @normal-foreground;
+    border: 1px solid;
+    border-color: @lightfg;
+    border-radius: 6px;
+}
+
+element-icon {
+    background-color: transparent;
+    size: 1.2em;
+    cursor: inherit;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+}

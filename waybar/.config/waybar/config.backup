@@ -1,0 +1,89 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 35,
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 4,
+    
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "pulseaudio",
+        "pulseaudio#microphone",
+        "bluetooth",
+        "network",
+        "temperature",
+        "cpu",
+        "memory",
+        "battery",
+        "tray"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "on-click": "activate",
+        "persistent-workspaces": {"*": 5}
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 50
+    },
+
+    "clock": {
+        "format": "CLK {:%H:%M}",
+        "format-alt": "DATE {:%d/%m/%Y}"
+    },
+
+    "pulseaudio": {
+        "format": "VOL {volume}%",
+        "format-muted": "VOL Muted",
+        "on-click": "pavucontrol -t 3"
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": "MIC {volume}%",
+        "format-source-muted": "MIC Muted",
+        "on-click": "pavucontrol -t 4"
+    },
+
+    "bluetooth": {
+        "format": "BT {status}",
+        "on-click": "blueman-manager"
+    },
+
+    "network": {
+        "format-wifi": "NET {signalStrength}%",
+        "format-ethernet": "NET Connected",
+        "format-disconnected": "NET Offline",
+        "on-click": "nm-connection-editor"
+    },
+
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+        "format": "TEMP {temperatureC}C"
+    },
+
+    "cpu": {
+        "format": "CPU {usage}%",
+        "on-click": "kitty -e htop"
+    },
+
+    "memory": {
+        "format": "RAM {used:0.1f}G",
+        "on-click": "kitty -e htop"
+    },
+
+    "battery": {
+        "format": "BAT {capacity}%",
+        "format-charging": "CHG {capacity}%"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    }
+}

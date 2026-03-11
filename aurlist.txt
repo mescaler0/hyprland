@@ -1,0 +1,7 @@
+brave-bin 1:1.87.186-1
+localsend-bin 1.17.0-1
+sddm-theme-tokyo-night-git r6.320c8e7-2
+wallust 3.4.0-1
+wallust-debug 3.4.0-1
+yay-bin 12.5.7-1
+yay-bin-debug 12.5.7-1

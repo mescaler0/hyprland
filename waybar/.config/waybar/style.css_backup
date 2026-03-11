@@ -1,0 +1,194 @@
+@import "colors.css";
+
+* {
+    font-family: "Cascadia Code", "Font Awesome 6 Free";
+    font-size: 13px;
+    font-weight: 600;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: @background;
+    color: @foreground;
+    border: none;
+    border-radius: 12px;
+    opacity: 0.95;
+}
+
+/* Workspaces */
+#workspaces {
+    margin: 0 5px;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    color: @foreground;
+    background-color: transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    background: linear-gradient(90deg, @color4, @color5);
+    color: @background;
+    font-weight: bold;
+}
+
+#workspaces button:hover {
+    background-color: @color8;
+    color: @color4;
+}
+
+/* Window title */
+#window {
+    margin: 0 10px;
+    padding: 0 10px;
+    color: @color6;
+    font-style: italic;
+}
+
+/* Clock */
+#clock {
+    padding: 0 15px;
+    margin: 0 5px;
+    background: linear-gradient(90deg, @color4, @color5);
+    color: @background;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Right modules - base style */
+#pulseaudio,
+#pulseaudio.microphone,
+#bluetooth,
+#network,
+#temperature,
+#cpu,
+#memory,
+#battery,
+#tray {
+    padding: 0 12px;
+    margin: 0 3px;
+    background-color: @color0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effects */
+#pulseaudio:hover,
+#bluetooth:hover,
+#network:hover,
+#temperature:hover,
+#cpu:hover,
+#memory:hover,
+#battery:hover {
+    background-color: @color8;
+    color: @color4;
+}
+
+/* Pulseaudio - Speaker */
+#pulseaudio {
+    color: @color4;
+}
+
+#pulseaudio.muted {
+    color: @color1;
+    background-color: rgba(247, 118, 142, 0.1);
+}
+
+/* Pulseaudio - Microphone */
+#pulseaudio.microphone {
+    color: @color5;
+}
+
+#pulseaudio.source-muted {
+    color: @color1;
+    background-color: rgba(247, 118, 142, 0.1);
+}
+
+/* Bluetooth */
+#bluetooth {
+    color: @color6;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    color: @color8;
+}
+
+#bluetooth.connected {
+    color: @color2;
+    background-color: rgba(158, 206, 106, 0.1);
+}
+
+/* Network */
+#network {
+    color: @color2;
+}
+
+#network.disconnected {
+    color: @color1;
+    background-color: rgba(247, 118, 142, 0.1);
+}
+
+/* Temperature */
+#temperature {
+    color: @color3;
+}
+
+#temperature.critical {
+    color: @color1;
+    background-color: rgba(247, 118, 142, 0.2);
+    animation: blink 0.5s linear infinite;
+}
+
+@keyframes blink {
+    to {
+        background-color: rgba(247, 118, 142, 0.4);
+    }
+}
+
+/* CPU */
+#cpu {
+    color: @color5;
+}
+
+/* Memory */
+#memory {
+    color: @color6;
+}
+
+/* Battery */
+#battery {
+    color: @color2;
+}
+
+#battery.charging {
+    color: @color4;
+    background-color: rgba(122, 162, 247, 0.1);
+}
+
+#battery.warning:not(.charging) {
+    color: @color3;
+    background-color: rgba(224, 175, 104, 0.1);
+}
+
+#battery.critical:not(.charging) {
+    color: @color1;
+    background-color: rgba(247, 118, 142, 0.2);
+    animation: blink 0.5s linear infinite;
+}
+
+/* Tray */
+#tray {
+    padding: 0 10px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @color1;
+}

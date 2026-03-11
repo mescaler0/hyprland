@@ -1,0 +1,108 @@
+/**
+ * Wallpaper Gallery Theme
+ * Miniature in griglia come gallery
+ */
+
+@import "~/.config/rofi/colors.rasi"
+
+* {
+    background-color: transparent;
+    text-color: @fg;
+    font: "Cascadia Code 10";
+}
+
+window {
+    transparency: "real";
+    background-color: @bg;
+    border: 2px solid;
+    border-color: @primary;
+    border-radius: 12px;
+    width: 900px;
+    height: 650px;
+    padding: 20px;
+    location: center;
+}
+
+mainbox {
+    spacing: 15px;
+    children: [inputbar, message, listview];
+}
+
+inputbar {
+    background-color: @color0;
+    border-radius: 8px;
+    padding: 12px 15px;
+    spacing: 10px;
+    children: [prompt, entry];
+}
+
+prompt {
+    text-color: @primary;
+    font: "Cascadia Code Bold 11";
+}
+
+entry {
+    placeholder: "Search...";
+    placeholder-color: @color8;
+    text-color: @fg;
+}
+
+message {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: @color0;
+}
+
+textbox {
+    text-color: @fg;
+}
+
+listview {
+    lines: 3;
+    columns: 4;
+    spacing: 12px;
+    scrollbar: true;
+    fixed-height: true;
+    fixed-columns: true;
+}
+
+element {
+    orientation: vertical;
+    border-radius: 8px;
+    padding: 8px;
+    spacing: 8px;
+    background-color: @color0;
+}
+
+element selected {
+    background-color: @primary;
+    border: 2px solid;
+    border-color: @accent;
+}
+
+element-icon {
+    size: 180px;
+    border-radius: 6px;
+    horizontal-align: 0.5;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    font: "Cascadia Code 9";
+    text-color: @fg;
+}
+
+element selected element-text {
+    text-color: @bg;
+    font: "Cascadia Code Bold 9";
+}
+
+scrollbar {
+    handle-width: 8px;
+    handle-color: @primary;
+    background-color: @color0;
+    border-radius: 4px;
+    padding: 0;
+    margin: 0 0 0 8px;
+}

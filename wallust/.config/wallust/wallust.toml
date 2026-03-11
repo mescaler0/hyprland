@@ -1,0 +1,20 @@
+[settings]
+# Backend per generare colori
+backend = "resized"  # o "full", "wal", "thumb"
+
+# Dove salvare i colori
+palette = "dark16"  # o "dark", "light"
+
+# Alpha/transparency
+alpha = 95
+
+[templates]
+# Template per ogni applicazione
+hyprland = { template = "hyprland.conf", target = "~/.config/hypr/colors.conf" }
+waybar = { template = "waybar.css", target = "~/.config/waybar/colors.css" }
+rofi = { template = "rofi.rasi", target = "~/.config/rofi/colors.rasi" }
+kitty = { template = "kitty.conf", target = "~/.config/kitty/colors.conf" }
+dunst = { template = "dunstrc", target = "~/.config/dunst/dunstrc" }
+gtk = { template = "gtk.css", target = "~/.config/gtk-3.0/gtk.css" }
+hyprlock = { template = "hyprlock.conf", target = "~/.config/hypr/hyprlock.conf" }
+sddm = { template = "sddm-theme.conf", target = "~/.cache/sddm-theme.conf" }

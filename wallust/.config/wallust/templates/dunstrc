@@ -1,0 +1,46 @@
+[global]
+    monitor = 0
+    follow = mouse
+    width = (0, 400)
+    height = 300
+    origin = top-right
+    offset = 10x50
+    
+    padding = 15
+    horizontal_padding = 15
+    frame_width = 2
+    gap_size = 5
+    corner_radius = 10
+    separator_height = 2
+    
+    font = Cascadia Code 10
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    
+    icon_position = left
+    max_icon_size = 64
+    
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
+    
+    frame_color = "{{color4}}"
+    separator_color = "{{color6}}"
+    timeout = 5
+    
+[urgency_low]
+    background = "{{background}}"
+    foreground = "{{foreground}}"
+    timeout = 3
+    
+[urgency_normal]
+    background = "{{background}}"
+    foreground = "{{foreground}}"
+    frame_color = "{{color4}}"
+    timeout = 5
+    
+[urgency_critical]
+    background = "{{color1}}"
+    foreground = "{{foreground}}"
+    frame_color = "{{color1}}"
+    timeout = 0

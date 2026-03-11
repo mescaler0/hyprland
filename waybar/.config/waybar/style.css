@@ -1,0 +1,129 @@
+@import "colors.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 7 Free", "Cascadia Code";
+    font-size: 13px;
+    font-weight: 600;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(16, 16, 16, 0.5);  /* Trasparente */
+    color: @foreground;
+    border: 1px solid @color4;
+    border-radius: 12px;
+}
+
+/* Workspaces */
+#workspaces {
+    margin: 0 5px;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    color: @foreground;
+    background-color: transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    background-color: @color4;
+    color: @background;
+    font-weight: bold;
+}
+
+#workspaces button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Window title */
+#window {
+    margin: 0 10px;
+    padding: 0 10px;
+    color: @foreground;
+}
+
+/* Clock */
+#clock {
+    padding: 0 15px;
+    margin: 0 5px;
+    background-color: @color4;
+    color: @background;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* TUTTI i moduli - colore UNIFORME */
+#pulseaudio,
+#pulseaudio.microphone,
+#bluetooth,
+#network,
+#temperature,
+#cpu,
+#memory,
+#battery,
+#tray {
+    padding: 0 12px;
+    margin: 0 3px;
+    background-color: rgba(255, 255, 255, 0.05);  /* Trasparente */
+    color: @foreground;  /* TUTTI stesso colore */
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Hover - TUTTI cambiano allo stesso modo */
+#pulseaudio:hover,
+#pulseaudio.microphone:hover,
+#bluetooth:hover,
+#network:hover,
+#temperature:hover,
+#cpu:hover,
+#memory:hover,
+#battery:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: @color4;  /* Colore accent */
+}
+
+/* Stati speciali - solo per indicare problemi */
+#pulseaudio.muted,
+#pulseaudio.source-muted,
+#network.disconnected,
+#bluetooth.disabled,
+#bluetooth.off {
+    color: @color8;  /* Grigio scuro quando disabilitato */
+    opacity: 0.5;
+}
+
+/* Critici - rosso solo per emergenze */
+#temperature.critical,
+#battery.critical:not(.charging) {
+    color: @color1;  /* Rosso */
+    background-color: rgba(247, 118, 142, 0.2);
+    animation: blink 0.5s linear infinite;
+}
+
+@keyframes blink {
+    to {
+        opacity: 0.5;
+    }
+}
+
+/* Warning batteria */
+#battery.warning:not(.charging) {
+    color: @color3;  /* Giallo/arancione */
+}
+
+/* Tray */
+#tray {
+    padding: 0 10px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @color1;
+}

@@ -1,0 +1,26 @@
+cat > ~/dotfiles/.gitignore << 'EOF'
+# Generated files (by wallust)
+hyprland/.config/hypr/colors.conf
+waybar/.config/waybar/colors.css
+rofi/.config/rofi/colors.rasi
+kitty/.config/kitty/colors.conf
+dunst/.config/dunst/dunstrc
+hyprlock/.config/hypr/hyprlock.conf
+
+# Cache
+**/.cache/
+*.cache
+
+# Backup
+backup/
+*-backup-*/
+
+# Thumbnails
+rofi/.cache/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

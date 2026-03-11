@@ -1,0 +1,74 @@
+@import "~/.config/rofi/colors.rasi"
+
+* {
+    background-color: transparent;
+    text-color: #ffffff;
+    font: "JetBrainsMono Nerd Font 11";
+}
+window {
+    /*background-color: @background;*/
+    background-color: rgba(20, 23, 25, 90%);
+    border: 2px solid;
+    border-color: @lightbg;
+    border-radius: 12px;
+    width: 1200px;
+    height: 600px;
+    padding: 20px;
+}
+mainbox {
+    spacing: 15px;
+    children: [inputbar, listview];
+}
+inputbar {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px 15px;
+    spacing: 10px;
+    children: [prompt, entry];
+}
+prompt {
+    text-color: 
+#7aa2f7;
+    font: "JetBrainsMono Nerd Font Bold 12";
+}
+entry {
+    placeholder: "Search wallpapers...";
+    placeholder-color: rgba(255, 255, 255, 0.4);
+}
+listview {
+    lines: 1;
+    columns: 4;
+    spacing: 15px;
+    scrollbar: true;
+}
+element {
+    orientation: vertical;
+    padding: 10px;
+    spacing: 6px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+element selected {
+    background-color: rgba(10, 12, 13, 80%);
+    border: 1px solid;
+    border-color: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+}
+element-icon {
+    size: 300px;
+    border-radius: 8px;
+    horizontal-align: 0.5;
+}
+element-text {
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    font: "JetBrainsMono Nerd Font 9";
+    text-color: #ffffff;
+}
+element selected element-text {
+    text-color: #000000;
+}
+scrollbar {
+    handle-color: #7aa2f7;
+    background-color: rgba(255, 255, 255, 0.1);
+}
