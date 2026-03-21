@@ -34,20 +34,22 @@
 
     "clock": {
         "format": " {:%H:%M}",
-        "format-alt": " {:d/%m/%Y}"
+        "format-alt": " {:%d/%m/%Y}",
+  "on-click": "~/.config/eww/scripts/toggle_bar.sh calendar",
+        "tooltip": false
     },
 
     "pulseaudio": {
         "format": " {volume}%",
         "format-muted": " Muted",
-        "on-click": "pavucontrol -t 3"
+	"on-click": "~/.config/eww/scripts/toggle_bar.sh volume"
     },
 
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "format-source": " {volume}%",
         "format-source-muted": " Muted",
-        "on-click": "pavucontrol -t 4"
+	"on-click": "~/.config/eww/scripts/toggle_bar.sh mic"
     },
 
     "bluetooth": {

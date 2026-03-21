@@ -18,3 +18,4 @@ dunst = { template = "dunstrc", target = "~/.config/dunst/dunstrc" }
 gtk = { template = "gtk.css", target = "~/.config/gtk-3.0/gtk.css" }
 hyprlock = { template = "hyprlock.conf", target = "~/.config/hypr/hyprlock.conf" }
 sddm = { template = "sddm-theme.conf", target = "~/.cache/sddm-theme.conf" }
+eww = { template = "eww.scss", target = "~/.config/eww/eww.scss"} 

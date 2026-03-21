@@ -6,29 +6,29 @@ WALLPAPER="$1"
 CURRENT_WALLPAPER="$HOME/.cache/current_wallpaper"
 
 if [ -z "$WALLPAPER" ]; then
-    WALLPAPER=$(find ~/wallpapers -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.webp" \) | shuf -n 1)
+  WALLPAPER=$(find ~/wallpapers -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.webp" \) | shuf -n 1)
 fi
 
 if [ ! -f "$WALLPAPER" ]; then
-    dunstify "Error" "Wallpaper not found: $WALLPAPER" -u critical
-    exit 1
+  dunstify "Error" "Wallpaper not found: $WALLPAPER" -u critical
+  exit 1
 fi
 
-echo "$WALLPAPER" > "$CURRENT_WALLPAPER"
+echo "$WALLPAPER" >"$CURRENT_WALLPAPER"
 
 # ← SWWW QUI
 swww img "$WALLPAPER" \
-    --transition-type grow \
-    --transition-pos center \
-    --transition-duration 2 \
-    --transition-fps 60
+  --transition-type grow \
+  --transition-pos center \
+  --transition-duration 2 \
+  --transition-fps 60
 
 wallust run "$WALLPAPER"
 
 pkill waybar && waybar &
 sleep 0.2
 pkill dunst && dunst &
-
+eww reload
 hyprctl reload
 
 filename=$(basename "$WALLPAPER")

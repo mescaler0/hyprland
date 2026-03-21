@@ -1,0 +1,47 @@
+(defpoll volume :interval "1s" "pamixer --get-volume || echo 0")
+(defpoll mic_volume :interval "1s" "pamixer --default-source --get-volume || echo 0")
+
+(defwidget volume_slider [val onchange icon]
+  (box :class "slider-container" :orientation "h" :space-evenly false :spacing 15
+    (label :text icon :class "slider-icon")
+    (scale :value {val == "" ? 0 : val} 
+           :orientation "h"
+           :max 101
+           :min 0
+           :onchange onchange)))
+
+(defwindow volume_bar
+  :monitor 0
+  :stacking "fg"
+  :geometry (geometry :x 380 :y 5 :width "50px" :height "8px" :anchor "top right")
+  :focusable false
+  :exclusive false
+  (volume_slider :val volume :onchange "pamixer --set-volume {}" :icon "  "))
+
+(defwindow mic_bar
+  :monitor 0
+  :stacking "fg"
+  :geometry (geometry :x "300px" :y "5px" :width "50px" :height "8px" :anchor "top right")
+  :focusable false
+  :exclusive false
+  (volume_slider :val mic_volume :onchange "pamixer --default-source --set-volume {}" :icon "  "))
+
+(defwidget calendar_widget []
+  (box :class "calendar-container" :orientation "v" :style "background-color: rgba(0, 5, 20, 0.85);"
+    (calendar :class "calendar"
+              :day {formattime(EWW_TIME, "%d")}
+              :month {formattime(EWW_TIME, "%m")}
+              :year {formattime(EWW_TIME, "%Y")})))
+
+(defwindow calendar_bar
+  :monitor 0
+  :stacking "overlay"
+  :geometry (geometry 
+    :x "0px"
+    :y "50px"
+    :width "280px"
+    :height "200px"
+    :anchor "top center")
+  :focusable false
+  :exclusive false
+  (calendar_widget))

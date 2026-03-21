@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Apri mic bar
+eww open mic_bar
+
+# Chiudi dopo 5 secondi
+(sleep 5 && eww close mic_bar) &

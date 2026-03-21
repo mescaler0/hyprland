@@ -1,0 +1,61 @@
+; Polls per volume
+(defpoll volume :interval "1s" 
+  "pamixer --get-volume || echo 50")
+
+(defpoll mic_volume :interval "1s" 
+  "pamixer --default-source --get-volume || echo 50")
+
+; Leggi colore da waybar (wallust)
+(defpoll accent_color :interval "3s"
+  "grep 'color4' ~/.config/waybar/colors.css | cut -d' ' -f3 | tr -d ';' || echo '#7aa2f7'")
+
+; Widget slider
+(defwidget volume_slider [val onchange icon]
+  (box :class "slider-box"
+       :orientation "h"
+       :space-evenly false
+       :spacing 10
+       :style "border-color: ${accent_color};"
+    (label :class "slider-icon"
+           :text icon 
+           :style "color: ${accent_color};")
+    (scale :value val
+           :min 0
+           :max 100
+           :orientation "h"
+           :onchange onchange
+           :style "color: ${accent_color};")))
+
+; Finestra volume speaker
+(defwindow volume_bar
+  :monitor 0
+  :stacking "overlay"
+  :geometry (geometry 
+    :x "365px"
+    :y "10px"
+    :width "210px"
+    :height "50px"
+    :anchor "top right")
+  :focusable false
+  :exclusive false
+  (volume_slider 
+    :val volume
+    :onchange "pamixer --set-volume {}"
+    :icon ""))
+
+; Finestra volume microfono
+(defwindow mic_bar
+  :monitor 0
+  :stacking "overlay"
+  :geometry (geometry 
+    :x "280px"
+    :y "10px"
+    :width "210px"
+    :height "50px"
+    :anchor "top right")
+  :focusable false
+  :exclusive false
+  (volume_slider 
+    :val mic_volume
+    :onchange "pamixer --default-source --set-volume {}"
+    :icon ""))

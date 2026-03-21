@@ -1,0 +1,60 @@
+/* Importa i colori di wallust */
+@import "colors"; 
+
+window { background: transparent; }
+* { all: unset; }
+
+.slider-container {
+    background-color: rgba($background, 0.7); 
+    border: 1px solid $color4;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+
+/* Stile per la barra */
+scale trough {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    min-height: 10px;
+    min-width: 160px;
+}
+
+scale trough highlight {
+    background-color: $color4;
+    border-radius: 10px;
+}
+
+/* Calendario */
+.calendar-container {
+    background-color: rgba($background, 0.95);
+    border: 1px solid $color4;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.calendar {
+    color: $foreground;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 11px;
+}
+
+calendar:selected {
+    background-color: $color4;
+    color: $background;
+    border-radius: 4px;
+}
+
+calendar.header {
+    color: $color4;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+calendar.button {
+    color: $color8;
+}
+
+calendar:indeterminate {
+    color: $color8;
+}

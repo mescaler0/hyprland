@@ -1,0 +1,56 @@
+/* ~/.config/wallust/templates/eww.scss */
+/* Variabili NON servono - eww non le supporta */
+
+/* Slider volume/mic */
+.slider-container {
+    background-color: ##00010BF2;  /* F2 = 95% opacity in hex */
+    border: 1px solid ##FF9733;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+scale trough {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    min-height: 10px;
+    min-width: 160px;
+}
+
+scale trough highlight {
+    background-color: ##FF9733;
+    border-radius: 10px;
+}
+
+/* Calendario */
+.calendar-container {
+    background: ##00010BF2;  /* F2 = 95% opacity */
+    border: 2px solid ##FF9733;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.calendar {
+    color: ##EAFCFC;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 11px;
+}
+
+calendar:selected {
+    background-color: ##FF9733;
+    color: ##00010B;
+    border-radius: 4px;
+}
+
+calendar.header {
+    color: ##FF9733;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+calendar.button {
+    color: ##97A9AA;
+}
+
+calendar:indeterminate {
+    color: ##97A9AA;
+}

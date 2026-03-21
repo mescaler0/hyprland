@@ -24,3 +24,5 @@ rofi/.cache/
 # OS files
 .DS_Store
 Thumbs.db
+eww/.config/eww/eww.scss
+eww/.config/eww/eww.scss.backup
