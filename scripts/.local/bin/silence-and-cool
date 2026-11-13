@@ -1,0 +1,8 @@
+#!/bin/bash
+# Attendi 5 secondi che il sistema sia completamente avviato
+sleep 5
+# Applica il limite hardware per preservare la vita dei componenti (45W)
+sudo ryzenadj --stapm-limit=45000 --fast-limit=45000 --slow-limit=45000
+
+# Check
+# sudo ryzenadj -i | grep -E "STAPM|Fast|Slow"
